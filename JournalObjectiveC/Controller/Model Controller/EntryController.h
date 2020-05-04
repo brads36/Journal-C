@@ -15,10 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (EntryController *)sharedController;
 
+- (void)loadFromPersistentStorage;
+- (void)saveToPersistentStorage;
+
 @property (nonatomic, strong, readonly) NSArray *entries;
 - (void)addEntries:(Entry *)entry;
 - (void)removeEntries:(Entry *)entry;
-- (void)saveToPersisnentStorage;
 
 @end
 

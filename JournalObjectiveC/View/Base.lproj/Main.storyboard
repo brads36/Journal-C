@@ -45,23 +45,74 @@
             </objects>
             <point key="canvasLocation" x="1088.4057971014493" y="176.11607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry Detail View Controller-->
         <scene sceneID="tJn-Xb-m16">
             <objects>
-                <viewController id="Rx2-HG-GIe" sceneMemberID="viewController">
+                <viewController id="Rx2-HG-GIe" customClass="EntryDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jtx-Lj-Mzr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Plw-ZM-x1f">
+                                <rect key="frame" x="10" y="108" width="394" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yyc-p8-SeJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Entry Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N5Z-Rw-M83">
+                                <rect key="frame" x="10" y="168" width="394" height="544"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MY6-aL-Rat">
+                                <rect key="frame" x="0.0" y="752" width="414" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="TV7-Ot-fvr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearButtonTapped:" destination="Rx2-HG-GIe" eventType="touchUpInside" id="Tu0-9j-UGP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Ny-pO-AaG" firstAttribute="trailing" secondItem="N5Z-Rw-M83" secondAttribute="trailing" constant="10" id="DyQ-gi-Na5"/>
+                            <constraint firstItem="Plw-ZM-x1f" firstAttribute="top" secondItem="6Ny-pO-AaG" secondAttribute="top" constant="20" id="F1a-5E-12D"/>
+                            <constraint firstItem="N5Z-Rw-M83" firstAttribute="top" secondItem="Plw-ZM-x1f" secondAttribute="bottom" constant="20" id="Hex-XG-BWZ"/>
+                            <constraint firstItem="N5Z-Rw-M83" firstAttribute="leading" secondItem="6Ny-pO-AaG" secondAttribute="leading" constant="10" id="Urr-VR-dga"/>
+                            <constraint firstItem="MY6-aL-Rat" firstAttribute="leading" secondItem="6Ny-pO-AaG" secondAttribute="leading" id="hLn-zb-VlY"/>
+                            <constraint firstItem="Plw-ZM-x1f" firstAttribute="leading" secondItem="6Ny-pO-AaG" secondAttribute="leading" constant="10" id="lV2-1p-ICy"/>
+                            <constraint firstItem="6Ny-pO-AaG" firstAttribute="trailing" secondItem="MY6-aL-Rat" secondAttribute="trailing" id="prI-ji-TdO"/>
+                            <constraint firstItem="6Ny-pO-AaG" firstAttribute="trailing" secondItem="Plw-ZM-x1f" secondAttribute="trailing" constant="10" id="rrF-27-w79"/>
+                            <constraint firstItem="6Ny-pO-AaG" firstAttribute="bottom" secondItem="MY6-aL-Rat" secondAttribute="bottom" constant="50" id="zRR-OK-ZH6"/>
+                            <constraint firstItem="MY6-aL-Rat" firstAttribute="top" secondItem="N5Z-Rw-M83" secondAttribute="bottom" constant="40" id="zh7-Vs-ptB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Ny-pO-AaG"/>
                     </view>
                     <navigationItem key="navigationItem" id="4XL-gR-MPg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="d0M-to-gH2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="d0M-to-gH2">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="Rx2-HG-GIe" id="1cR-ce-gTh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textTextView" destination="N5Z-Rw-M83" id="V0k-5F-7ZD"/>
+                        <outlet property="titleTextField" destination="Plw-ZM-x1f" id="bm2-jd-Y78"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Idj-Qv-1dW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="175"/>
+            <point key="canvasLocation" x="1818.840579710145" y="174.77678571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="11Q-PQ-N0t">

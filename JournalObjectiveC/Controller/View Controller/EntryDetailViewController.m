@@ -7,26 +7,71 @@
 //
 
 #import "EntryDetailViewController.h"
+#import "EntryController.h"
 
 @interface EntryDetailViewController ()
+
+// MARK: - Outlets
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextView *textTextView;
 
 @end
 
 @implementation EntryDetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
+    [EntryController.sharedController loadFromPersistentStorage];
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self updateViews];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)updateViews
+{
+    if (!self.entry) return;
+    
+    self.titleTextField.text = self.entry.title;
+    self.textTextView.text = self.entry.text;
 }
-*/
+
+// MARK: - Actions
+- (IBAction)saveButtonTapped:(id)sender
+{
+    if (self.entry)
+    {
+        self.entry.title = self.titleTextField.text;
+        self.entry.text = self.textTextView.text;
+        self.entry.timestamp = NSDate.date;
+    }
+    else
+    {
+        Entry *entry = [[Entry alloc] initWithTitle:self.titleTextField.text text:self.textTextView.text timestamp:NSDate.date];
+        [EntryController.sharedController addEntries:entry];
+    }
+    [EntryController.sharedController saveToPersistentStorage];
+    [self.navigationController popViewControllerAnimated:true];
+}
+
+- (IBAction)clearButtonTapped:(id)sender
+{
+    self.titleTextField.text = @"";
+    self.textTextView.text = @"";
+}
+
+- (BOOL)textFieldShoudlReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+// MARK: - Properties
+- (void)setEntry:(Entry *)entry
+{
+    if (entry != _entry)
+    {
+        _entry = entry;
+        [self updateViews];
+    }
+}
 
 @end
