@@ -13,6 +13,10 @@
 		78534A9E2460A8AD007B9A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78534A9D2460A8AD007B9A6D /* Assets.xcassets */; };
 		78534AA12460A8AD007B9A6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78534A9F2460A8AD007B9A6D /* LaunchScreen.storyboard */; };
 		78534AA42460A8AD007B9A6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78534AA32460A8AD007B9A6D /* main.m */; };
+		78534AB32460AA7E007B9A6D /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 78534AB22460AA7E007B9A6D /* Entry.m */; };
+		78534AB82460AF77007B9A6D /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78534AB72460AF77007B9A6D /* EntryController.m */; };
+		78534ABB2460BD99007B9A6D /* EntryListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78534ABA2460BD99007B9A6D /* EntryListTableViewController.m */; };
+		78534ABE2460BFF4007B9A6D /* EntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78534ABD2460BFF4007B9A6D /* EntryDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		78534AA02460A8AD007B9A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78534AA22460A8AD007B9A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78534AA32460A8AD007B9A6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		78534AB12460AA7E007B9A6D /* Entry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		78534AB22460AA7E007B9A6D /* Entry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		78534AB62460AF77007B9A6D /* EntryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
+		78534AB72460AF77007B9A6D /* EntryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
+		78534AB92460BD99007B9A6D /* EntryListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntryListTableViewController.h; sourceTree = "<group>"; };
+		78534ABA2460BD99007B9A6D /* EntryListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntryListTableViewController.m; sourceTree = "<group>"; };
+		78534ABC2460BFF4007B9A6D /* EntryDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntryDetailViewController.h; sourceTree = "<group>"; };
+		78534ABD2460BFF4007B9A6D /* EntryDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntryDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,8 @@
 		78534AAB2460A8F3007B9A6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				78534AB12460AA7E007B9A6D /* Entry.h */,
+				78534AB22460AA7E007B9A6D /* Entry.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,8 +113,30 @@
 		78534AAD2460A902007B9A6D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				78534AB52460AF50007B9A6D /* View Controller */,
+				78534AB42460AF41007B9A6D /* Model Controller */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		78534AB42460AF41007B9A6D /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				78534AB62460AF77007B9A6D /* EntryController.h */,
+				78534AB72460AF77007B9A6D /* EntryController.m */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		78534AB52460AF50007B9A6D /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				78534AB92460BD99007B9A6D /* EntryListTableViewController.h */,
+				78534ABA2460BD99007B9A6D /* EntryListTableViewController.m */,
+				78534ABC2460BFF4007B9A6D /* EntryDetailViewController.h */,
+				78534ABD2460BFF4007B9A6D /* EntryDetailViewController.m */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,8 +209,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78534AB82460AF77007B9A6D /* EntryController.m in Sources */,
+				78534AB32460AA7E007B9A6D /* Entry.m in Sources */,
 				78534A932460A8AC007B9A6D /* AppDelegate.m in Sources */,
 				78534AA42460A8AD007B9A6D /* main.m in Sources */,
+				78534ABB2460BD99007B9A6D /* EntryListTableViewController.m in Sources */,
+				78534ABE2460BFF4007B9A6D /* EntryDetailViewController.m in Sources */,
 				78534A962460A8AC007B9A6D /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
